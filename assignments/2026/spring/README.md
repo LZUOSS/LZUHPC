@@ -1,0 +1,20 @@
+该目录为兰州大学超算队2026年春季招新题目。
+
+HPC方向题目为：[HPC.md](assignments/2026/spring/HPC.md)
+
+AI方向题目为：[AI.md](assignments/2026/spring/AI.md)
+
+你只需要选择**一个方向**提交报告即可！当然如果你能力够强，也可以提交两个方向的报告。
+
+## 备注
+
+1. 所有题目在基于linux进行开发和评测，请务必不要使用windows！你可以使用任意发行版，我们推荐 ubuntu24.04。没有linux服务器的同学可以使用WSL进行开发。
+2. 请大家在 6 月 1 日之前提交自己的报告，报告请使用 pdf 格式提交（你可以使用 markdown、latex 或 word 编写，但请使用 pdf 提交）
+
+由于AI发展真的很快，而且能够省下大量重复性工作，推动优化的更多。因此禁止各位同学在题目中使用AI是不可能也没必要的，相反我们鼓励大家使用最新最前沿的AI模型和工作流（如果你还在用豆包网页版问问题来coding的话），诸如GPT5.5，Deepseek-v4-pro等模型和claude code，codex，opencode等工具。
+
+AI可以帮助我们高效的学习和解决问题，但是不能成为把一切都推给AI而自己什么都不会的人。我们并不想招这样的人，否则的话，为什么我们不再开一些子agent呢？这样既降本增效又多快好省。
+
+**请注意**：AI参与部分必须如实标注，如果在后续检查和面试过程中出现：AI做的但是不说明是AI做的等情况，将遭到
+
+# <div style="display: flex; justify-content: center;"><span style="color:red;"><strong>ＤＥＳＫ　ＲＥＪＥＣＴ</strong></span></div>
