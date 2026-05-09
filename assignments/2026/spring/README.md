@@ -1,8 +1,8 @@
 该目录为兰州大学超算队2026年春季招新题目。
 
-HPC方向题目为：[HPC.md](assignments/2026/spring/HPC.md)
+HPC方向题目为：[HPC.md](HPC.md)
 
-AI方向题目为：[AI.md](assignments/2026/spring/AI.md)
+AI方向题目为：[AI.md](AI.md)
 
 你只需要选择**一个方向**提交报告即可！当然如果你能力够强，也可以提交两个方向的报告。
 
