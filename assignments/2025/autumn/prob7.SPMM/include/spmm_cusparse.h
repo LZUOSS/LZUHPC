@@ -1,0 +1,1 @@
+void spmm_cusparse(int *d_ptr, int *d_idx, float *d_val, float *d_vin, float *d_vout, int m, int n, int k,int nnz);

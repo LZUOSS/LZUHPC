@@ -1,0 +1,6 @@
+.clang-format
+run_*
+*.raw
+*.ppm
+optimize/
+.vscode

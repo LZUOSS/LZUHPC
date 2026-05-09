@@ -1,0 +1,1 @@
+void test_reduce(const int len,const int iter_time);

@@ -1,0 +1,10 @@
+#N Randomly Generated Pattern
+#C Author: RandomGen
+x = 35, y = 75, rule = B3/S23
+23bobobobo$25bo3b2o$23b5o2bo$25bo3b2o$22b2o2b2o$27b4o$23bob4obo$21b3ob
+2obobo$21bo3b4o$23bob3ob2o$18$28bo3bo$26b3obo2bo$26b2obo$26b2ob2o3bo$2
+6b2o2b2o2bo$25bobobo2b3o$27b3o2bobo$26bob5obo$25b10o$26b2ob6o$25bo2bob
+3o$25bo3bo2bo$25bobobo4bo$25bob2o3b2o$25b2o2b3o2bo$4b2o3bo17b4obo$2bo2
+b2o2bo15bob3obob2o$b2o2bob3o15bo2b4ob2o$2ob7o$4b5o$2o2bobobo$bo2b2o2bo
+$bob4o2bo$b2o2bo$bo6bo$12$14b4obob2o$15b2o3bo2bo$15b2o2bo$17b2o3bo$14b
+o3b2o2b2o$14b2o3bob3o$16bo2bo2bo$16bo2b2o2bo$17b3obo$16b3o2b3o$!
