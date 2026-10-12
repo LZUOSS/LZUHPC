@@ -6,6 +6,7 @@
 
 | 时间 | 文档 |
 | - | - |
+| 2026秋 | [README.md](assignments/2026/autumn/README.md) |
 | 2026春 | [README.md](assignments/2026/spring/README.md) |
 | 2025秋 | [README.md](assignments/2025/autumn/README.md) |
 | 2024秋 | [README.md](assignments/2024/autumn/README.md) |

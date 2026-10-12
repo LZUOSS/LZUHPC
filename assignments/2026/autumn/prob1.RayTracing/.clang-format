@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+BreakBeforeBraces: Allman
+IndentWidth: 4
+IndentPPDirectives: BeforeHash
+AccessModifierOffset: -4
+ColumnLimit: 120
+PointerAlignment: Right
+FixNamespaceComments: true
+SortIncludes: true
+SpaceBeforeParens: Never
+TabWidth: 4
+UseTab: Never
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+NamespaceIndentation: All
