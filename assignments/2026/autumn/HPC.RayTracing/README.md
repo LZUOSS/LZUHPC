@@ -1,5 +1,3 @@
-[TOC]
-
 # RayTracing
 
 ## 1. 题目介绍
