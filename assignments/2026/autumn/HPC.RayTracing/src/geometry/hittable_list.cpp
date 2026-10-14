@@ -1,5 +1,7 @@
 #include "geometry/hittable_list.hpp"
 
+void hittable_list::initialize() {}
+
 bool hittable_list::hit(const ray &r, interval ray_t, hit_record &rec) const
 {
     hit_record temp_rec;

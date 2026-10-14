@@ -25,5 +25,7 @@ public:
         objects.push_back(object);
     }
 
+    void initialize();
+
     bool hit(const ray &r, interval ray_t, hit_record &rec) const override;
 };

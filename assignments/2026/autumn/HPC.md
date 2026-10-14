@@ -2,11 +2,11 @@
 
 下面两道题目均需完成：
 
-## 1. 光线追踪题
+## 1. 工程题
 
-[题目链接](.\prob1.RayTracing\README.md)
+该题目请参见[光线追踪](HPC.RayTracing/README.md)
 
-## 2. 工程题
+## 2. 创意题
 
 [题目链接](./prob2.Proj/README.md)
 

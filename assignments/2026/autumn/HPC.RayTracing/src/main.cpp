@@ -1,3 +1,4 @@
+#include <array>
 #include <charconv>
 #include <chrono>
 #include <fstream>
@@ -6,6 +7,7 @@
 #include <string>
 #include <string_view>
 #include <system_error>
+#include <vector>
 
 #include "geometry/hittable_list.hpp"
 #include "geometry/sphere.hpp"
@@ -24,37 +26,50 @@ namespace
         auto ground_material = make_shared<lambertian>(color(0.5, 0.5, 0.5));
         world.add(make_shared<sphere>(point3(0, -1000, 0), 1000, ground_material));
 
+        constexpr double small_radius = 0.2;
+        constexpr double gap = 0.001;
+        const std::array<point3, 3> large_centers{point3(0, 1, 0), point3(-4, 1, 0), point3(4, 1, 0)};
+        std::vector<point3> small_centers;
+        small_centers.reserve(22 * 22);
+        const auto can_place = [&](const point3 &center)
+        {
+            const double large_distance = 1.0 + small_radius + gap;
+            for(const auto &other : large_centers)
+                if((center - other).length_squared() < large_distance * large_distance)
+                    return false;
+            const double small_distance = 2.0 * small_radius + gap;
+            for(const auto &other : small_centers)
+                if((center - other).length_squared() < small_distance * small_distance)
+                    return false;
+            return true;
+        };
+
         for(int a = -11; a < 11; a++)
         {
             for(int b = -11; b < 11; b++)
             {
                 auto choose_mat = random_double();
-                point3 center{a + 0.9 * random_double(), 0.2, b + 0.9 * random_double()};
+                point3 center{a + 0.9 * random_double(), small_radius, b + 0.9 * random_double()};
+                if(!can_place(center))
+                    continue;
 
-                if((center - point3(4, 0.2, 0)).length() > 0.9)
+                shared_ptr<material> sphere_material;
+                if(choose_mat < 0.8)
                 {
-                    shared_ptr<material> sphere_material;
-
-                    if(choose_mat < 0.8)
-                    {
-                        const auto first = color::random();
-                        auto albedo = first * color::random();
-                        sphere_material = make_shared<lambertian>(albedo);
-                        world.add(make_shared<sphere>(center, 0.2, sphere_material));
-                    }
-                    else if(choose_mat < 0.95)
-                    {
-                        auto albedo = color::random(0.5, 1);
-                        auto fuzz = random_double(0, 0.5);
-                        sphere_material = make_shared<metal>(albedo, fuzz);
-                        world.add(make_shared<sphere>(center, 0.2, sphere_material));
-                    }
-                    else
-                    {
-                        sphere_material = make_shared<dielectric>(1.5);
-                        world.add(make_shared<sphere>(center, 0.2, sphere_material));
-                    }
+                    const auto first = color::random();
+                    auto albedo = first * color::random();
+                    sphere_material = make_shared<lambertian>(albedo);
                 }
+                else if(choose_mat < 0.95)
+                {
+                    auto albedo = color::random(0.5, 1);
+                    auto fuzz = random_double(0, 0.5);
+                    sphere_material = make_shared<metal>(albedo, fuzz);
+                }
+                else
+                    sphere_material = make_shared<dielectric>(1.5);
+                world.add(make_shared<sphere>(center, small_radius, sphere_material));
+                small_centers.push_back(center);
             }
         }
 
@@ -117,7 +132,7 @@ int main(int argc, char *argv[])
 
     const auto scene_start = std::chrono::steady_clock::now();
     hittable_list world = build_world();
-    // Future acceleration-structure construction belongs here, outside Render time.
+    world.initialize();
     const auto scene_end = std::chrono::steady_clock::now();
 
     camera cam;
